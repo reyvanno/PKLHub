@@ -210,6 +210,11 @@
             <!-- MAP -->
             <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
 
+                @if($company->image)
+                    <img src="{{ asset('storage/' . $company->image) }}"
+                        class="w-32 h-32 object-cover rounded">
+                @endif
+
                 <h3 class="text-lg font-semibold mb-4 animate-fadeUp">
                     Lokasi
                 </h3>

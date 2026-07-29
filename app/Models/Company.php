@@ -23,6 +23,7 @@ class Company extends Model
         'owner_id',
         'is_edited',
         'edited_fields',
+        'image',
     ];
 
     protected static function booted()

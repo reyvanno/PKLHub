@@ -47,6 +47,13 @@ class CompanyController extends Controller
     public function store(StoreUserCompanyRequest $request)
     {
         $data = $request->validated();
+        // HANDLE UPLOAD GAMBAR
+        if ($request->hasFile('image')) {
+
+            $path = $request->file('image')->store('companies', 'public');
+
+            $data['image'] = $path;
+        }
         $confirm = $request->input('confirm_duplicate');
 
         // 🔎 CEK PERUSAHAAN YANG MIRIP (HANYA YANG APPROVED)
